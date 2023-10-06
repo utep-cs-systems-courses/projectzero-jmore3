@@ -1,6 +1,5 @@
 #include "draw.h"		/* for font */
 #include "stdio.h"		/* for putchar */
-#include "font_5x7.h"
 
 /*
 void print_char_11x16(char c)

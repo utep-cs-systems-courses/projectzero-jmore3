@@ -14,26 +14,20 @@ void print_square(int leftCol, int size)
   }
 }
 
-// Prints a arrow of specified height whose left edge is at col leftCol.
-void print_arrow(int leftCol, int width, int height)
+// Prints a triangle of specified height whose left edge is at col leftCol.
+void print_triangle(int leftCol, int size)
 {
-  // Calculate the width of the rectangle (half of the arrow's width)
-  int rectWidth = width / 2;
-
-  // Starting row for the triangle.
-  int triangleStartRow = 0;
-
-  //Triangle
-  for (int row = triangleStartRow; row <= height / 2; row++) {
-    int minCol = leftCol + width / 2 - row;
-    int maxCol = leftCol + width / 2 + row;
-    for (int col = leftCol; col < minCol; col++) putchar(' ');
-    for (int col = minCol; col <= maxCol; col++) putchar('*');
+  for(int row = 0; row <= size; row++){
+    int minCol = leftCol + size - row, maxCol = leftCol + size + row;
+    int col;
+    for (col = 0; col < minCol; col++) putchar(' ');
+    for ( ; col <= maxCol; col++) putchar('*');
     putchar('\n');
   }
-  //Rectangle
-  for (int row = 0; row < height / 2; row++){
-    for (int col = leftCol; col < leftCol + rectWidth; col++) putchar('*');
-    putchar('\n');
-  }
+}
+
+void print_arrow(int leftCol, int size)
+{
+  print_triangle(leftCol, size);
+  print_square(leftCol+2, size+2);
 }
