@@ -31,3 +31,4 @@ void print_arrow(int leftCol, int size)
   print_triangle(leftCol, size);
   print_square(leftCol+2, size+2);
 }
+
